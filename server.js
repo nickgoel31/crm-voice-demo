@@ -393,7 +393,7 @@ app.post('/api/chat', async (req, res) => {
 app.use(express.static(join(__dirname, 'dist')));
 
 // Handle SPA routing - return index.html for any unknown routes
-app.get('(.*)', (req, res) => {
+app.get('/:path*', (req, res) => {
   res.sendFile(join(__dirname, 'dist', 'index.html'));
 });
 
